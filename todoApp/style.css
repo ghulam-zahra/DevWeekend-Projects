@@ -1,0 +1,232 @@
+/* style.css – clean, glassy, modern */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: linear-gradient(145deg, #112558 0%, #e1e7f0 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.todo-card {
+  background: rgb(211, 205, 205);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 2.8rem;
+  box-shadow: 0 24px 48px -14px rgba(10, 30, 50, 0.30),
+              0 8px 24px -6px rgba(0,0,0,0.06);
+  padding: 2rem 2rem 1.8rem;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid rgba(255,255,255,0.55);
+  transition: 0.2s;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #1b2a3f;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 2px solid rgba(50, 80, 110, 0.10);
+  padding-bottom: 0.7rem;
+}
+
+h1 i {
+  color: #2b5e8a;
+  font-size: 1.8rem;
+  background: rgba(43, 94, 138, 0.10);
+  padding: 0.3rem 0.7rem;
+  border-radius: 2rem;
+}
+
+/* add row */
+.add-section {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.8rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.3rem 0.3rem 0.3rem 1.4rem;
+  border-radius: 3.5rem;
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow: 0 4px 12px rgba(0, 20, 30, 0.04);
+}
+
+.add-section input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.8rem 0.2rem;
+  font-size: 1rem;
+  font-weight: 450;
+  color: #1d2b3f;
+  outline: none;
+}
+
+.add-section input::placeholder {
+  color: #8b9bb0;
+  font-weight: 400;
+}
+
+.add-section button {
+  background: #1f4a6e;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.7rem 1.8rem;
+  border-radius: 3.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: 0.15s ease;
+  box-shadow: 0 6px 16px rgba(31, 74, 110, 0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.add-section button i {
+  font-size: 0.9rem;
+}
+
+.add-section button:hover {
+  background: #153a57;
+  transform: scale(0.97);
+  box-shadow: 0 4px 12px rgba(20, 50, 80, 0.3);
+}
+
+.add-section button:active {
+  transform: scale(0.94);
+}
+
+/* task list */
+.task-list {
+  list-style: none;
+  margin: 1.2rem 0 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.task-list::-webkit-scrollbar {
+  width: 4px;
+}
+.task-list::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.02);
+  border-radius: 10px;
+}
+.task-list::-webkit-scrollbar-thumb {
+  background: #b0c6db;
+  border-radius: 10px;
+}
+
+/* individual task */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  padding: 0.7rem 1rem 0.7rem 0.9rem;
+  border-radius: 2.5rem;
+  border: 1px solid rgba(255,255,255,0.7);
+  transition: 0.15s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(60, 100, 140, 0.15);
+}
+
+.task-item .task-text {
+  flex: 1;
+  font-size: 0.98rem;
+  color: #1d2b3f;
+  font-weight: 450;
+  word-break: break-word;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #7e8d9f;
+}
+
+.task-checkbox {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: #1f4a6e;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #8a9bb0;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2rem;
+  transition: 0.15s;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.delete-btn:hover {
+  color: #c03a3a;
+  background: rgba(200, 50, 50, 0.08);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* footer */
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(60, 80, 110, 0.08);
+  font-size: 0.9rem;
+  color: #3f556b;
+}
+
+.task-counter {
+  background: rgba(40, 70, 100, 0.06);
+  padding: 0.25rem 1rem;
+  border-radius: 2rem;
+  font-weight: 450;
+}
+
+.clear-btn {
+  cursor: pointer;
+  padding: 0.25rem 1rem;
+  border-radius: 2rem;
+  background: rgba(180, 60, 60, 0.04);
+  color: #7a5a5a;
+  font-weight: 450;
+  transition: 0.15s;
+  border: 1px solid transparent;
+}
+
+.clear-btn:hover {
+  background: rgba(180, 60, 60, 0.08);
+  color: #a53a3a;
+  border-color: rgba(180, 60, 60, 0.1);
+}
