@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App · Real Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="weather-card">
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Search city... e.g. London" value="Bangalore" />
+            <button id="searchBtn"><i class="fas fa-magnifying-glass"></i> Search</button>
+        </div>
+
+        <div class="weather-display" id="weatherDisplay">
+            <div class="city-name" id="cityName">
+                <i class="fas fa-spinner fa-spin"></i> Loading...
+            </div>
+            <span class="country-tag" id="countryTag">--</span>
+
+            <div class="weather-icon-temp">
+                <span class="weather-icon" id="weatherIcon"><i class="fas fa-circle-notch fa-spin"></i></span>
+                <span class="temperature" id="temperature">--<sup>°C</sup></span>
+            </div>
+            <div class="condition-text" id="conditionText">--</div>
+
+            <div class="extra-stats">
+                <div class="stat-item">
+                    <span class="stat-label"><i class="fas fa-droplet"></i> Humidity</span>
+                    <span class="stat-value" id="humidity">--%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label"><i class="fas fa-wind"></i> Wind</span>
+                    <span class="stat-value" id="windSpeed">-- km/h</span>
+                </div>
+            </div>
+
+            <div class="time-note">
+                <span><i class="far fa-clock"></i> <span id="currentTime">--:--:--</span></span>
+                <span><i class="far fa-calendar-alt"></i> <span id="currentDate">--</span></span>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-msg" style="display: none;"></div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
