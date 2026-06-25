@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.hero{
+    width:100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #010758, #490d61);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.hero h1{
+   font-size: 45px;
+   font-weight: 500;
+   margin-bottom: 50px;
+   margin-top: -50px;
+   color: #fff;
+}
+.hero h1 span{
+    color:#ff2963;
+}
+textarea{
+    width: 600px;
+    height: 250px;
+    background: #403d84;
+    color: #fff;
+    font-size: 15px;
+    border: 0;
+    border: 1px solid #ff2963;
+    outline: 0;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    resize: none;
+    margin-bottom: 20px;
+}
+textarea::placeholder{
+    color: #ddd;
+    font-size: 16px;
+}
+.row{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+button{
+    background: #ff2963;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+button:hover{
+    background: #ff4d7a;
+    transform: scale(1.02);
+}
+button img{
+    width: 16px;
+    margin-right: 10px;
+}
+select{
+    flex:1;
+    color: #fff;
+    background: #403d84;
+    height: 50px;
+    padding: 0 20px;
+    outline: 0;
+    border: 0;
+    border-radius: 35px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+    background-size: 24px;
+}
+select option{
+    background: #403d84;
+    color: #fff;
+}
