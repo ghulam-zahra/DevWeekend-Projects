@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Menus</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hero">
+    <h1>Select Menus</h1>
+    <p>Three patterns — native, tag picker, and custom dropdown</p>
+  </div>
+
+  <div class="page">
+
+    <!-- Native Select -->
+    <p class="section-label">Native select</p>
+    <div class="card">
+      <h2>Book a flight</h2>
+      <p class="desc">Standard selects styled to match your design system.</p>
+      <div class="row">
+        <div class="field">
+          <label for="origin">From</label>
+          <div class="custom-select-wrap">
+            <select id="origin">
+              <option value="">Choose city</option>
+              <option>New York (JFK)</option>
+              <option>London (LHR)</option>
+              <option>Tokyo (HND)</option>
+              <option>Paris (CDG)</option>
+              <option>Dubai (DXB)</option>
+            </select>
+            <i class="ti ti-chevron-down chevron"></i>
+          </div>
+        </div>
+        <div class="field">
+          <label for="dest">To</label>
+          <div class="custom-select-wrap">
+            <select id="dest">
+              <option value="">Choose city</option>
+              <option>New York (JFK)</option>
+              <option>London (LHR)</option>
+              <option>Tokyo (HND)</option>
+              <option>Paris (CDG)</option>
+              <option>Dubai (DXB)</option>
+            </select>
+            <i class="ti ti-chevron-down chevron"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="cabin">Cabin class</label>
+          <div class="custom-select-wrap">
+            <select id="cabin">
+              <option>Economy</option>
+              <option>Premium Economy</option>
+              <option>Business</option>
+              <option>First Class</option>
+            </select>
+            <i class="ti ti-chevron-down chevron"></i>
+          </div>
+        </div>
+        <div class="field">
+          <label for="passengers">Passengers</label>
+          <div class="custom-select-wrap">
+            <select id="passengers">
+              <option>1 passenger</option>
+              <option>2 passengers</option>
+              <option>3 passengers</option>
+              <option>4 passengers</option>
+            </select>
+            <i class="ti ti-chevron-down chevron"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tag Picker -->
+    <p class="section-label">Tag picker (multi-select)</p>
+    <div class="card">
+      <h2>Filter interests</h2>
+      <p class="desc">Click to toggle multiple options. Selected items highlight in blue.</p>
+      <div class="field">
+        <label>Topics</label>
+        <div class="tag-select-wrap" id="tags">
+          <button class="tag selected" data-val="design"><i class="ti ti-palette"></i> Design</button>
+          <button class="tag" data-val="dev"><i class="ti ti-code"></i> Development</button>
+          <button class="tag" data-val="data"><i class="ti ti-chart-bar"></i> Data</button>
+          <button class="tag selected" data-val="ai"><i class="ti ti-brain"></i> AI</button>
+          <button class="tag" data-val="product"><i class="ti ti-package"></i> Product</button>
+          <button class="tag" data-val="research"><i class="ti ti-microscope"></i> Research</button>
+          <button class="tag" data-val="writing"><i class="ti ti-pencil"></i> Writing</button>
+        </div>
+      </div>
+      <div class="output-bar" id="tag-output">
+        <i class="ti ti-tag"></i>
+        <span>Design, AI</span>
+      </div>
+    </div>
+
+    <!-- Custom Dropdown -->
+    <p class="section-label">Custom dropdown</p>
+    <div class="card">
+      <h2>Choose a plan</h2>
+      <p class="desc">A fully custom dropdown with rich option content.</p>
+      <div class="field">
+        <label>Subscription</label>
+        <div class="dropdown-wrap" id="plan-wrap">
+          <button class="dropdown-btn" id="plan-btn" aria-haspopup="listbox" aria-expanded="false">
+            <span id="plan-label">Select a plan</span>
+            <i class="ti ti-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu" id="plan-menu" role="listbox">
+            <div class="dropdown-item" data-val="free" role="option">
+              <i class="ti ti-bolt"></i>
+              <div class="item-info">
+                <div class="item-name">Free</div>
+                <div class="item-sub">Basic access · 50 messages/day</div>
+              </div>
+            </div>
+            <div class="dropdown-item active" data-val="pro" role="option">
+              <i class="ti ti-star"></i>
+              <div class="item-info">
+                <div class="item-name">Pro — $20/mo</div>
+                <div class="item-sub">Unlimited · Priority access</div>
+              </div>
+            </div>
+            <div class="dropdown-item" data-val="team" role="option">
+              <i class="ti ti-users"></i>
+              <div class="item-info">
+                <div class="item-name">Team — $30/seat</div>
+                <div class="item-sub">Collaboration tools · Admin console</div>
+              </div>
+            </div>
+            <div class="dropdown-item" data-val="enterprise" role="option">
+              <i class="ti ti-building"></i>
+              <div class="item-info">
+                <div class="item-name">Enterprise</div>
+                <div class="item-sub">Custom pricing · SSO · Audit logs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="submit-row">
+        <button class="btn-primary" id="submit-btn">
+          <i class="ti ti-check"></i>
+          Confirm selection
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="ti ti-circle-check"></i>
+    <span id="toast-msg">Saved!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
