@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark mode · any page converter</title>
+  <!-- separate CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- preconnect for fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- main content – typical page elements -->
+  <header class="page-header">
+    <h1>🌙 Dark mode converter</h1>
+    <p>Toggle any page into dark mode · separate files</p>
+  </header>
+
+  <main>
+    <section class="card-grid">
+      <article class="card">
+        <h2>📄 HTML</h2>
+        <p>This page is built with semantic HTML. The dark mode toggle is powered by a single JavaScript function that toggles a class on the <code>&lt;body&gt;</code>.</p>
+      </article>
+      <article class="card">
+        <h2>🎨 CSS</h2>
+        <p>All styles are in <code>style.css</code>. Dark mode variables are defined inside the <code>.dark-mode</code> class – everything updates smoothly.</p>
+      </article>
+      <article class="card">
+        <h2>⚡ JS</h2>
+        <p>The logic lives in <code>script.js</code>. It listens for the toggle button, applies/removes the <code>dark-mode</code> class, and saves your preference in <code>localStorage</code>.</p>
+      </article>
+    </section>
+
+    <!-- interactive demo block -->
+    <section class="demo-block">
+      <h3>🕹️ Interactive demo</h3>
+      <p>This block shows how dark mode affects inputs, buttons, and links.</p>
+      <div class="demo-actions">
+        <input type="text" placeholder="type something…" class="demo-input">
+        <button class="demo-btn">click me</button>
+        <a href="#" class="demo-link">example link</a>
+      </div>
+      <p class="hint">(the toggle button is in the footer ⬇️)</p>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <!-- dark mode toggle button – will be controlled by JS -->
+    <button id="darkModeToggle" class="toggle-btn" aria-label="Switch to dark mode">
+      <span class="toggle-icon">🌙</span> Dark mode
+    </button>
+    <small>preference saved in localStorage · refresh to keep it</small>
+  </footer>
+
+  <!-- separate JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
