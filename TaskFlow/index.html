@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaskFlow — Drag & Drop Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <span class="logo">⬡ TaskFlow</span>
+      <span class="subtitle">your project board</span>
+    </div>
+    <div class="header-right">
+      <button class="btn-add-col" id="addColBtn">+ Add Column</button>
+      <span class="task-count" id="taskCount">0 tasks</span>
+    </div>
+  </header>
+
+  <!-- Board -->
+  <main class="board-wrapper">
+    <div class="board" id="board">
+      <!-- Columns injected by JS -->
+    </div>
+  </main>
+
+  <!-- Add Column Modal -->
+  <div class="modal-overlay" id="colModal">
+    <div class="modal">
+      <h3>New Column</h3>
+      <label>Column Name</label>
+      <input type="text" id="colNameInput" placeholder="e.g. In Review…" maxlength="30" />
+      <div class="modal-actions">
+        <button class="btn ghost" id="colCancel">Cancel</button>
+        <button class="btn primary" id="colConfirm">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Task Modal -->
+  <div class="modal-overlay" id="taskModal">
+    <div class="modal">
+      <h3>New Task</h3>
+      <label>Task title</label>
+      <input type="text" id="taskTitleInput" placeholder="What needs doing?" maxlength="60" />
+      <label>Priority</label>
+      <div class="priority-picker" id="priorityPicker">
+        <button class="pri-btn active" data-priority="low">🟢 Low</button>
+        <button class="pri-btn" data-priority="medium">🟡 Medium</button>
+        <button class="pri-btn" data-priority="high">🔴 High</button>
+      </div>
+      <div class="modal-actions">
+        <button class="btn ghost" id="taskCancel">Cancel</button>
+        <button class="btn primary" id="taskConfirm">Add Task</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
