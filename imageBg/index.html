@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ pastel · image studio</title>
+  <!-- separate CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- separate JS (defer) -->
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="playground">
+    <div class="card">
+      <h1 class="title">🌸 image · dream</h1>
+      <!-- image container with background + effects -->
+      <div class="image-frame" id="imageFrame">
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&auto=format&fit=crop" 
+             alt="cute aesthetic landscape" 
+             id="displayImage"
+             class="main-image">
+        <!-- overlay for extra glow (css) -->
+        <div class="glow-overlay"></div>
+      </div>
+
+      <!-- controls – cute & playful -->
+      <div class="controls">
+        <div class="control-group">
+          <label for="bgColor">🎨 background</label>
+          <input type="color" id="bgColor" value="#ffe4f0">
+        </div>
+
+        <div class="control-group">
+          <label for="effectSelect">✨ effect</label>
+          <select id="effectSelect">
+            <option value="none">none</option>
+            <option value="blur">blur</option>
+            <option value="grayscale">grayscale</option>
+            <option value="sepia">sepia</option>
+            <option value="saturate">saturate</option>
+            <option value="hue-rotate">hue rotate</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="animationSelect">🌀 animation</label>
+          <select id="animationSelect">
+            <option value="none">none</option>
+            <option value="float">float</option>
+            <option value="pulse">pulse</option>
+            <option value="spin">spin</option>
+            <option value="bounce">bounce</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button class="btn btn-reset" id="resetBtn">↺ reset all</button>
+        <span class="hint">✦ click color to change bg ✦</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
