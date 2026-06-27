@@ -1,0 +1,147 @@
+/* style.css – clean, minimal, responsive */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #659287;
+  padding: 1rem;
+}
+
+.calendar {
+  background: #B1D3B9;
+  border-radius: 2.5rem;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15), 0 8px 24px -6px rgba(0, 0, 0, 0.05);
+  padding: 2rem 2rem 1.8rem;
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+/* header: month + year + nav */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+  padding: 0 0.25rem;
+}
+
+.calendar-header .month-year {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.calendar-header .month {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #467235;
+  letter-spacing: -0.02em;
+}
+
+.calendar-header .year {
+  font-size: 1.2rem;
+  font-weight: 450;
+  color: #467235;
+  letter-spacing: 0.02em;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.nav-btn {
+  background: #f0f4fe;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 40px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #1f2a44;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.nav-btn:hover {
+  background: #e0e9fe;
+  transform: scale(0.96);
+}
+
+.nav-btn:active {
+  background: #c8d6f5;
+}
+
+/* weekday labels */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: #5e6f8d;
+}
+
+.weekdays span {
+  padding: 0.4rem 0;
+  border-radius: 40px;
+}
+
+/* days grid */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-cell {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 450;
+  color: #1f2a44;
+  background: transparent;
+  border-radius: 40px;
+  transition: 0.1s ease;
+  cursor: default;
+}
+
+/* empty / other-month cells */
+.day-cell.other-month {
+  color: #1A312C;
+}
+
+/* today highlight (matches screenshot: 13 June 2026) */
+.day-cell.today {
+  background: #1f2a44;
+  color: white;
+  font-weight: 550;
+  box-shadow: 0 4px 8px rgba(26, 40, 70, 0.12);
+}
+
+/* subtle hover for interactive feel */
+.day-cell:not(.other-month):not(.today):hover {
+  background: #f0f4fe;
+}
+
+.calendar-footer {
+  margin-top: 0.5rem;
+  height: 4px;
+}
